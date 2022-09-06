@@ -17,7 +17,7 @@ from os import path
 # --------------------------------------
 
 name = 'rootpath'
-version = '0.1.1'
+version = '0.1.2'
 description = 'Python project/package root path detection.'
 keywords = [
     'python',
