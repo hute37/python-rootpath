@@ -15,7 +15,7 @@ import setuptools
 # --------------------------------------
 
 name = "rootpath"
-version = "0.1.2"
+version = "0.2.1"
 description = "Python project/package root path detection."
 keywords = [
     "python",

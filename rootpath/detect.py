@@ -57,8 +57,11 @@ def detect(current_path=None, pattern=None):
         root_file_names = None
 
         while detecting:
-            file_names = listdir(current_path)
-            found_more_files = bool(len(file_names) > 0)
+            try:
+                file_names = listdir(current_path)
+                found_more_files = bool(len(file_names) > 0)
+            except FileNotFoundError:
+                return None
 
             if not found_more_files:
                 detecting = False

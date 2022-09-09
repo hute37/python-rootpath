@@ -27,7 +27,7 @@ import rootpath
 # --------------------------------------
 
 
-def append(current_path="", pattern=None):
+def append(current_path=None, pattern=None):
     """
     Automatically adds current file's package root to Python load path (i.e. `sys.path`) unless already added.
     This makes it possible to always ensure module imports behave same no matter how the file is loaded.
@@ -42,10 +42,10 @@ def append(current_path="", pattern=None):
     project_root_path = rootpath.detect(current_path, pattern)
 
     if project_root_path is None:
-        return None
+        return False, project_root_path
 
     try:
-        if project_root_path != current_path:
+        if current_path is not None and project_root_path != current_path:
             try:
                 sys.path.remove(current_path)
             except:
